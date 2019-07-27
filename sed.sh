@@ -6,8 +6,8 @@ sed 's/~~//' content-pdf.md > content-pdf1.md
 # replace '~~' with nothing for pdf
 sed 's/+/\\noindent/' content-pdf1.md > content-pdf2.md
 # find '+' and replace \noindent for pdf ('+' noindented poems only)
-sed '/^-bc/s/$/**\\end{center}/' content-pdf2.md > content-pdf2a.md
-sed '/^-bc/s//\\begin{center}**/' content-pdf2a.md > content-pdf2b.md
+sed '/^-bc/s/$/}\\end{center}/' content-pdf2.md > content-pdf2a.md
+sed '/^-bc/s//\\begin{center}\\bfseries{/' content-pdf2a.md > content-pdf2b.md
 sed '/^-br/s/$/**/' content-pdf2b.md > content-pdf2c.md
 sed '/^-br/s//\\null\\hfill**/' content-pdf2c.md > content-pdf2d.md
 sed '/^-b/s/$/**/' content-pdf2d.md > content-pdf3.md
